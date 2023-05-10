@@ -24,5 +24,50 @@ public class Main {
             cc.addCard(c);
         }
         System.out.println(cc);
+
+        /*
+        String input = args[0];
+        int size = 0;
+        try {
+            size = Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            System.err.println("Cannot parse " + input + " into integer.");
+            System.exit(1);
+        }
+        if (size < 3) {
+            System.err.println("Size has to be >= 3.");
+            System.exit(1);
+        }
+        printTriangles(size);
+         */
+    }
+
+    public static void printTriangles(int size) {
+        StringBuilder s = new StringBuilder();
+        s.append("*");
+        System.out.println(s);
+        for (int i = 0; i < size - 1; i++) {
+            s.setLength(0);
+            s.append("*");
+            s.append(" ".repeat(i));
+            s.append("*");
+            System.out.println(s);
+        }
+        s.setLength(0);
+        s.append("*".repeat(size + 1));
+        System.out.println(s);
+        for (int i = size - 2; i >= 0; i--) {
+            s.setLength(0);
+            s.append(" ".repeat(size - i - 1));
+            s.append("*");
+            s.append(" ".repeat(i));
+            s.append("*");
+            System.out.println(s);
+        }
+        s.setLength(0);
+        s.append(" ".repeat(size));
+        s.append("*");
+        System.out.println(s);
     }
 }
