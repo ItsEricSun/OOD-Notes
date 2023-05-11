@@ -8,39 +8,41 @@ import java.util.Scanner;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        Path p = Path.of("sampleData/cards.txt");
-        Scanner s = null;
-        try {
-            s = new Scanner(p);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        CardCollection cc = new CardCollection();
-        int numberOfCards = s.nextInt();
-        for (int i = 0; i < numberOfCards; i++) {
-            char value = s.next().charAt(0);
-            char suit = s.next().charAt(0);
-            Card c = new Card(value, suit);
-            cc.addCard(c);
-        }
-        System.out.println(cc);
+//        Path p = Path.of("sampleData/cards.txt");
+//        Scanner s = null;
+//        try {
+//            s = new Scanner(p);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        CardCollection cc = new CardCollection();
+//        int numberOfCards = s.nextInt();
+//        for (int i = 0; i < numberOfCards; i++) {
+//            char value = s.next().charAt(0);
+//            char suit = s.next().charAt(0);
+//            Card c = new Card(value, suit);
+//            cc.addCard(c);
+//        }
+//        System.out.println(cc);
 
-        /*
-        String input = args[0];
-        int size = 0;
-        try {
-            size = Integer.parseInt(input);
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-            System.err.println("Cannot parse " + input + " into integer.");
-            System.exit(1);
-        }
-        if (size < 3) {
-            System.err.println("Size has to be >= 3.");
-            System.exit(1);
-        }
-        printTriangles(size);
-         */
+//        if (args.length != 1) {
+//            System.err.println("Amount of arguments should be 1.");
+//            System.exit(1);
+//        }
+//        String input = args[0];
+//        int size = 0;
+//        try {
+//            size = Integer.parseInt(input);
+//        } catch (NumberFormatException e) {
+//            e.printStackTrace();
+//            System.err.println("Cannot parse " + input + " into integer.");
+//            System.exit(1);
+//        }
+//        if (size < 3) {
+//            System.err.println("Size has to be >= 3.");
+//            System.exit(1);
+//        }
+//        printTriangles(size);
     }
 
     public static void printTriangles(int size) {
