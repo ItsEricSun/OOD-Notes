@@ -1,13 +1,27 @@
 package org.example;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        if (args.length != 1) {
+            System.err.println("Amount of arguments should be 1.");
+            System.exit(1);
+        }
+        Path p = Path.of(args[0]);
+        AlphabeticalPDFFileTreeWalkerVisitor a = new AlphabeticalPDFFileTreeWalkerVisitor();
+        Files.walkFileTree(p    , a);
+        ArrayList<String> retVal = a.getList();
+        for (String s : retVal) {
+            System.out.println(s);
+        }
+
 //        Path p = Path.of("sampleData/cards.txt");
 //        Scanner s = null;
 //        try {
